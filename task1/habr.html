@@ -445,79 +445,34 @@
           </ul>
           <aside class="all"><a href="http://freelansim.ru/tasks">все заказы</a></aside>
         </nav>
+
+        <nav class="new_companies">
+          <h3>Новые компании</h3>
+          <ul class="companies_items">
+            <li>
+              <figure class="favicon"><img src="./habr_files/e012cc3ea4d1ca864c41336a20567c53_small.png" alt="логотипчик компании Raindrop.io " title="Raindrop.io"></figure>
+              <a href="http://habrahabr.ru/company/raindrop/">Raindrop.io</a>
+            </li>
+            <li>
+              <figure class="favicon"><img src="./habr_files/eabafe8a8cf3df93ab96d82b0f041eee_small.png" alt="логотипчик компании PentestIT " title="PentestIT"></figure>
+              <a href="http://habrahabr.ru/company/pentestit/">PentestIT</a>
+            </li>
+            <li>
+              <figure class="favicon"><img src="./habr_files/24a871357499c6b7cc8f1a21611bb3cb_small.png" alt="логотипчик компании Поиск VPS " title="Поиск VPS"></figure>
+              <a href="http://habrahabr.ru/company/poiskvps/">Поиск VPS</a>
+            </li>
+          </ul>
+          <aside class="all"><a href="http://habrahabr.ru/companies/new/">все новые компании</a></aside>
+        </nav>
       </aside>
     </section>
 	
 
 	<div class="sidebar_right">
 				
-<div class="block new_companies">
-		<div class="title">Новые компании</div>
-		
-			<div class="companies_items">
-				<div class="company_item " id="company_2556">
-					<div class="favicon">
-						<img src="./habr_files/e012cc3ea4d1ca864c41336a20567c53_small.png" alt="логотипчик компании Raindrop.io " title="Raindrop.io">
-					</div>
-					<div class="title">
-						<a href="http://habrahabr.ru/company/raindrop/">Raindrop.io</a>
-					</div>
-				</div>
-				<div class="company_item " id="company_2538">
-					<div class="favicon">
-						<img src="./habr_files/eabafe8a8cf3df93ab96d82b0f041eee_small.png" alt="логотипчик компании PentestIT " title="PentestIT">
-					</div>
-					<div class="title">
-						<a href="http://habrahabr.ru/company/pentestit/">PentestIT</a>
-					</div>
-				</div>
-				<div class="company_item " id="company_2562">
-					<div class="favicon">
-						<img src="./habr_files/24a871357499c6b7cc8f1a21611bb3cb_small.png" alt="логотипчик компании Поиск VPS " title="Поиск VPS">
-					</div>
-					<div class="title">
-						<a href="http://habrahabr.ru/company/poiskvps/">Поиск VPS</a>
-					</div>
-				</div>
-			</div>
-		<div class="all"><a href="http://habrahabr.ru/companies/new/">все новые компании</a></div>
-	</div>
+
 	
-	<script type="text/javascript">
-		$(document).ready(function(){
-		
-			/** 
-		   * присоедениться
-		   */
-		  $('.new_companies .subscribe_button').click(function(){
-		  	var link = $(this);
-		    var company_id = link.data('id');
-		    $.post('/json/corporation/fan_add/', { company_id: company_id }, function(json){
-		      if(json.messages =='ok'){
-		        $('.new_companies #company_'+company_id).addClass('subscribed');
-		      }else{
-		        show_system_error(json);
-		      }
-		    },'json');
-		    return false;
-		  });
-		  
-		  // покинуть
-		  $('.new_companies .unsubscribe_button').click(function(){
-		    var link = $(this);
-			  var company_id = link.data('id');
-		      $.post('/json/corporation/fan_del/', { company_id: company_id }, function(json){
-		        if(json.messages =='ok'){
-		          $('.new_companies #company_'+company_id).removeClass('subscribed');
-		        }else{
-		          show_system_error(json);
-		        }
-		      },'json');
-		    return false;
-		  });
-		  
-		})
-	</script>
+
 
 
 
